@@ -8,3 +8,4 @@ codegen-units = 1
 panic = "abort"
 opt-level = 3
 strip = true
+sha2 = "0.10"

@@ -1,3 +1,0 @@
-cd crates/falcon
-cargo generate-lockfile
-cd ../..

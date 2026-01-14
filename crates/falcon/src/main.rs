@@ -44,7 +44,7 @@ async fn run_ws(url: &str, api_key: &str, secret: &str, passphrase: &str) -> Res
 
     // login
     let ts = Utc::now().timestamp_millis();
-    let sig = hex::encode(hmacsha256::HMAC::mac(format!("{}{}", ts, "GET/users/self"), secret.as_bytes()));
+    let sig = hex::encode(hmac::Hmac::<sha2::Sha256>::mac(format!("{}{}", ts, "GET/users/self"), secret.as_bytes()));
     let login = serde_json::json!({
         "type": "login",
         "key": api_key,
